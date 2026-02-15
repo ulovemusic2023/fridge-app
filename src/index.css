@@ -1,0 +1,414 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════
+   FRIDGE APP — Premium Global Styles
+   ═══════════════════════════════════════════════════════ */
+
+/* Global resets */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+}
+
+/* ─── Typography ─── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'Noto Sans TC', sans-serif;
+  font-weight: 700;
+}
+
+/* ─── Warm Background Gradients ─── */
+.bg-warm-gradient {
+  background: linear-gradient(160deg, #fef3e2 0%, #fce7f3 40%, #ede9fe 70%, #e0f2fe 100%);
+}
+
+.bg-warm-radial {
+  background: radial-gradient(ellipse at 30% 20%, #fef9c3 0%, #fef3e2 25%, #fce7f3 50%, #ede9fe 75%, #e0f2fe 100%);
+}
+
+/* Style-specific backgrounds */
+.bg-retro-theme {
+  background: linear-gradient(160deg, #fefce8 0%, #fef3c7 40%, #fde68a33 70%, #fff7ed 100%);
+}
+
+.bg-modern-theme {
+  background: linear-gradient(160deg, #f1f5f9 0%, #e2e8f0 40%, #cbd5e1 70%, #f8fafc 100%);
+}
+
+.bg-cute-theme {
+  background: linear-gradient(160deg, #fce7f3 0%, #f5d0fe 40%, #e9d5ff 70%, #dbeafe 100%);
+}
+
+/* ─── Glassmorphism ─── */
+.glass {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+/* ─── Fridge Body Effects ─── */
+.fridge-body {
+  position: relative;
+}
+
+.fridge-body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.35) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.08) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.fridge-body::after {
+  content: '';
+  position: absolute;
+  top: 8%;
+  left: 5%;
+  width: 30%;
+  height: 15%;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255,255,255,0.5) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Fridge reflection */
+.fridge-reflection {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    transparent 35%,
+    rgba(255,255,255,0.12) 38%,
+    rgba(255,255,255,0.06) 42%,
+    transparent 45%,
+    transparent 100%
+  );
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Fridge shadow */
+.fridge-shadow {
+  width: 88%;
+  height: 16px;
+  margin: 6px auto 0;
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(0,0,0,0.18) 0%, transparent 70%);
+  filter: blur(2px);
+}
+
+/* ─── Handle Styles ─── */
+.handle-metallic {
+  background: linear-gradient(180deg, 
+    #f5f5f5 0%, 
+    #e0e0e0 15%, 
+    #d0d0d0 30%, 
+    #c8c8c8 50%, 
+    #d0d0d0 70%, 
+    #e0e0e0 85%, 
+    #f5f5f5 100%
+  );
+  box-shadow: 
+    1px 0 3px rgba(0,0,0,0.15),
+    -1px 0 2px rgba(255,255,255,0.6),
+    inset 0 0 1px rgba(255,255,255,0.5);
+}
+
+.handle-copper {
+  background: linear-gradient(180deg,
+    #e8c8a0 0%,
+    #d4a574 20%,
+    #c4905e 40%,
+    #b8834f 50%,
+    #c4905e 60%,
+    #d4a574 80%,
+    #e8c8a0 100%
+  );
+  box-shadow:
+    1px 0 3px rgba(0,0,0,0.2),
+    -1px 0 2px rgba(232,200,160,0.6),
+    inset 0 0 1px rgba(255,255,255,0.3);
+}
+
+.handle-cute {
+  background: linear-gradient(180deg,
+    #fbbfe0 0%,
+    #f9a8d4 30%,
+    #f472b6 50%,
+    #f9a8d4 70%,
+    #fbbfe0 100%
+  );
+  box-shadow:
+    1px 0 3px rgba(244,114,182,0.3),
+    -1px 0 2px rgba(255,255,255,0.5),
+    inset 0 0 1px rgba(255,255,255,0.4);
+}
+
+/* ─── Compartment Gap ─── */
+.compartment-gap {
+  height: 3px;
+  background: linear-gradient(
+    180deg,
+    rgba(0,0,0,0.12) 0%,
+    rgba(0,0,0,0.04) 40%,
+    rgba(0,0,0,0.02) 60%,
+    rgba(0,0,0,0.08) 100%
+  );
+  position: relative;
+}
+
+.compartment-gap::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.08);
+}
+
+.compartment-gap::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: rgba(0,0,0,0.06);
+}
+
+/* ─── Compartment Inner Glow (open state) ─── */
+.compartment-open-glow {
+  box-shadow: inset 0 0 30px rgba(255, 248, 220, 0.5), inset 0 0 60px rgba(255, 244, 200, 0.2);
+}
+
+/* ─── Animations ─── */
+
+/* Compartment open animation — smooth expand with bounce */
+@keyframes compartment-expand {
+  0% { max-height: 0; opacity: 0; }
+  60% { opacity: 1; }
+  80% { max-height: 450px; }
+  100% { max-height: 400px; }
+}
+
+.animate-compartment-open {
+  animation: compartment-expand 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+/* Food item stagger in */
+@keyframes food-stagger-in {
+  0% { opacity: 0; transform: translateY(8px) scale(0.95); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.animate-food-in {
+  animation: food-stagger-in 0.3s ease-out forwards;
+  opacity: 0;
+}
+
+/* Setup wizard fade */
+@keyframes fade-in-up {
+  0% { opacity: 0; transform: translateY(16px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.4s ease-out forwards;
+}
+
+/* Button hover micro-interaction */
+.btn-hover-scale {
+  transition: all 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-hover-scale:hover {
+  transform: scale(1.04);
+}
+
+.btn-hover-scale:active {
+  transform: scale(0.97);
+}
+
+/* Pulse animation (for AI recognition loading) */
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+/* Bounce subtle */
+@keyframes bounce-subtle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+.animate-bounce-subtle {
+  animation: bounce-subtle 2s ease-in-out infinite;
+}
+
+/* Floating effect for welcome illustration */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Sparkle animation */
+@keyframes sparkle {
+  0%, 100% { opacity: 0.4; transform: scale(0.8); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.animate-sparkle {
+  animation: sparkle 2s ease-in-out infinite;
+}
+
+/* Progress dots */
+.progress-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d1d5db;
+  transition: all 0.3s ease;
+}
+
+.progress-dot.active {
+  background: #6366f1;
+  width: 24px;
+  border-radius: 4px;
+}
+
+/* ─── Scrollbar ─── */
+.sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+.sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.sidebar-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.1);
+  border-radius: 2px;
+}
+
+.pretty-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.pretty-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.pretty-scroll::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.08);
+  border-radius: 3px;
+}
+.pretty-scroll::-webkit-scrollbar-thumb:hover {
+  background: rgba(0,0,0,0.15);
+}
+
+/* ─── Card Styles ─── */
+.card-soft {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 
+    0 4px 16px rgba(0,0,0,0.04),
+    0 1px 4px rgba(0,0,0,0.03);
+}
+
+/* ─── Modal Overlay ─── */
+.modal-overlay {
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(4px);
+}
+
+/* ─── Mini Fridge Illustration (for template cards) ─── */
+.mini-fridge {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mini-fridge::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(255,255,255,0.4) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* ─── Expiry Badge ─── */
+.badge-ok {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.badge-warning {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.badge-danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.badge-expired {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+/* ─── Input Focus ─── */
+input:focus, select:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+  border-color: #818cf8 !important;
+}
+
+/* ─── Pill Button ─── */
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: none;
+  cursor: pointer;
+}
+
+.pill-btn:hover {
+  transform: scale(1.05);
+}
+
+.pill-btn:active {
+  transform: scale(0.97);
+}
